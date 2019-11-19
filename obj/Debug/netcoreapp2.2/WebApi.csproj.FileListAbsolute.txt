@@ -1,0 +1,14 @@
+/home/renzo/development/webapi/ccau/WebApi/bin/Debug/netcoreapp2.2/WebApi.deps.json
+/home/renzo/development/webapi/ccau/WebApi/bin/Debug/netcoreapp2.2/WebApi.runtimeconfig.json
+/home/renzo/development/webapi/ccau/WebApi/bin/Debug/netcoreapp2.2/WebApi.runtimeconfig.dev.json
+/home/renzo/development/webapi/ccau/WebApi/bin/Debug/netcoreapp2.2/WebApi.dll
+/home/renzo/development/webapi/ccau/WebApi/bin/Debug/netcoreapp2.2/WebApi.pdb
+/home/renzo/development/webapi/ccau/WebApi/obj/Debug/netcoreapp2.2/WebApi.csprojAssemblyReference.cache
+/home/renzo/development/webapi/ccau/WebApi/obj/Debug/netcoreapp2.2/WebApi.csproj.CoreCompileInputs.cache
+/home/renzo/development/webapi/ccau/WebApi/obj/Debug/netcoreapp2.2/WebApi.RazorAssemblyInfo.cache
+/home/renzo/development/webapi/ccau/WebApi/obj/Debug/netcoreapp2.2/WebApi.RazorAssemblyInfo.cs
+/home/renzo/development/webapi/ccau/WebApi/obj/Debug/netcoreapp2.2/WebApi.AssemblyInfoInputs.cache
+/home/renzo/development/webapi/ccau/WebApi/obj/Debug/netcoreapp2.2/WebApi.AssemblyInfo.cs
+/home/renzo/development/webapi/ccau/WebApi/obj/Debug/netcoreapp2.2/WebApi.RazorTargetAssemblyInfo.cache
+/home/renzo/development/webapi/ccau/WebApi/obj/Debug/netcoreapp2.2/WebApi.dll
+/home/renzo/development/webapi/ccau/WebApi/obj/Debug/netcoreapp2.2/WebApi.pdb
