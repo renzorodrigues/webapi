@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using ReflectionIT.Mvc.Paging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -53,7 +54,7 @@ namespace WebApi
             // CORS configuration
             services.AddCors(options => {
                 options.AddPolicy(MyAllowSpecificOrigins, builder => {
-                    builder.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString())
+                    builder.WithOrigins(Configuration["ApplicationSettings:Localhost"].ToString())
                                         .AllowAnyHeader()
                                         .AllowAnyMethod();
                 });
@@ -77,6 +78,12 @@ namespace WebApi
                     ValidateAudience = false,
                     ClockSkew = TimeSpan.Zero
                 };
+            });
+
+            // Pagination configuration
+            services.AddPaging(options => {
+                options.ViewName = "Bootstrap4";
+                options.PageParameterName = "pageindex";
             });
         }
 

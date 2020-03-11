@@ -138,5 +138,10 @@ namespace WebApi.Domain.Services
 
             return true;
         }
+
+        public IEnumerable<Attended> Pagination(int rowNumber, int page)
+        {
+            return this._attendedRepository.Pagination(rowNumber, page).ToList();
+        }
     }
 }

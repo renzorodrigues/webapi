@@ -1,8 +1,6 @@
-using System;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
-using MySql.Data.MySqlClient;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 using WebApi.Data.Helpers.Interfaces;
@@ -21,12 +19,18 @@ namespace WebApi.Data.Helpers
         {
             _sessionFactory = Fluently.Configure()
                 .Database(MySQLConfiguration.Standard.ConnectionString(
-                    x => x.Server("localhost").
+                    x => x.
+                    // Server("localhost").
                     // Username("pma"). //landix
                     // Password(""). //landix
+                    Server("localhost").
                     Username("root"). //home
                     Password("123"). //home
                     Database("ccaudb")
+                    // Server("jsftj8ez0cevjz8v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com").
+                    // Username("dg5wa8cgq2448sjw").
+                    // Password("dfh4q04lozul9bq9").
+                    // Database("crbmwmjqho2qiu4g")
                 ))
                 .Mappings(x => x.AutoMappings.Add(AutoMap.AssemblyOf<User>(new AutoMappingConfiguration()).UseOverridesFromAssemblyOf<UserMap>()))
                 .Mappings(x => x.AutoMappings.Add(AutoMap.AssemblyOf<Attended>(new AutoMappingConfiguration()).UseOverridesFromAssemblyOf<AttendedMap>()))

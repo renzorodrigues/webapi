@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using WebApi.Domain.Entities;
 
 namespace WebApi.Domain.Services.Interfaces
@@ -13,5 +12,6 @@ namespace WebApi.Domain.Services.Interfaces
         bool Update(Guid id, Attended attended);
         void Delete(Guid id);
         IEnumerable<Attended> GetByName(string name);
+        IEnumerable<Attended> Pagination(int rowNumber, int page);
     }
 }

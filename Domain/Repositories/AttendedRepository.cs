@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using ReflectionIT.Mvc.Paging;
 using WebApi.Data.Helpers;
 using WebApi.Data.Helpers.Interfaces;
 using WebApi.Domain.Entities;
@@ -19,6 +20,14 @@ namespace WebApi.Domain.Repositories
             var attendeds = this._unitOfWork.Session.Query<Attended>()
             .Where(x => x.Name.Contains(search) || x.RegistrationNumber.ToString() == search);
             return attendeds;
+        }
+
+        // TODO
+        public IEnumerable<Attended> Pagination(int rowNumber, int page)
+        {
+            var attendeds = this._unitOfWork.Session.Query<Attended>()
+            .OrderBy(x => x.Name);
+            return PagingList.Create(attendeds, rowNumber, page);
         }
     }
 }

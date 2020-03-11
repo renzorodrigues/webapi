@@ -1,5 +1,6 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
+using MySql.Data.MySqlClient;
 using WebApi.Domain.Entities;
 using WebApi.Domain.Services.Interfaces;
 
@@ -33,11 +34,22 @@ namespace WebApi.Controllers
         // POST api/register
         [HttpPost("register")]
         public IActionResult Register(User credentials)
-        {            
-            if (this._authService.Register(credentials))
-                return StatusCode(201, "User created");
-            else
-                return StatusCode(400, "Bad Request: register failed");
+        {      
+            try
+            {
+                if (this._authService.Register(credentials))
+                    return StatusCode(201, "User created");
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                int number = ((MySqlException) ex.InnerException).Number;
+                if (number == 1062)
+                    return StatusCode(409, "Registration Number: DUPLICATED KEY");
+                else        
+                    return StatusCode(400, "Bad Request");
+            }      
         }
     }
 }

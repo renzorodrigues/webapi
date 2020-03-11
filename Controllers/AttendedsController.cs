@@ -27,6 +27,13 @@ namespace WebApi.Controllers
         }
 
         // GET api/attendeds
+        // [HttpGet("page")]
+        // public ActionResult<IEnumerable<string>> Pagination(int rowNumber, int pageSize)
+        // {
+        //     return Ok(this._service.Pagination(rowNumber, pageSize));
+        // }        
+
+        // GET api/attendeds
         [HttpGet("search")]
         public ActionResult<IEnumerable<string>> GetByName(string search)
         {
